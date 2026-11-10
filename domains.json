@@ -1,0 +1,820 @@
+﻿[
+    {
+        "name":  "Steam 服务",
+        "items":  [
+                      {
+                          "name":  "Steam 图片",
+                          "port":  443,
+                          "match":  "steamcdn-a.akamaihd.net;steamuserimages-a.akamaihd.net;cdn.akamai.steamstatic.com;community.akamai.steamstatic.com;avatars.akamai.steamstatic.com;store.akamai.steamstatic.com",
+                          "forward":  "steamimage.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "steamcdn-a.akamaihd.net;steamuserimages-a.akamaihd.net;cdn.akamai.steamstatic.com;community.akamai.steamstatic.com;avatars.akamai.steamstatic.com;store.akamai.steamstatic.com",
+                          "checked":  true
+                      },
+                      {
+                          "name":  "Steam 静态资源",
+                          "port":  443,
+                          "match":  "community.steamstatic.com",
+                          "forward":  "steamstatic.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "community.steamstatic.com",
+                          "checked":  true
+                      },
+                      {
+                          "name":  "Steam 更新",
+                          "port":  443,
+                          "match":  "media.steampowered.com",
+                          "forward":  "steammedia.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "media.steampowered.com",
+                          "checked":  true
+                      },
+                      {
+                          "name":  "Steam 社区",
+                          "port":  443,
+                          "match":  "steamcommunity.com;www.steamcommunity.com",
+                          "forward":  "steamcommunity.rmbgame.net",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "steamstore-a.akamaihd.net",
+                          "proxyType":  0,
+                          "listen":  "steamcommunity.com;www.steamcommunity.com",
+                          "checked":  true
+                      },
+                      {
+                          "name":  "Steam 商店",
+                          "port":  443,
+                          "match":  "store.steampowered.com;api.steampowered.com;help.steampowered.com;login.steampowered.com;checkout.steampowered.com",
+                          "forward":  "steamstore.rmbgame.net",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "steamstore-a.akamaihd.net",
+                          "proxyType":  0,
+                          "listen":  "store.steampowered.com;api.steampowered.com;help.steampowered.com;login.steampowered.com;checkout.steampowered.com",
+                          "checked":  true
+                      },
+                      {
+                          "name":  "Steam 社区视频封面加载",
+                          "port":  443,
+                          "match":  "img.youtube.com",
+                          "forward":  "http://nl.mossimo.top:41080/",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "nl.mossimo.top",
+                          "proxyType":  4,
+                          "listen":  "img.youtube.com",
+                          "checked":  true
+                      },
+                      {
+                          "name":  "Steam 白山云CDN 修复",
+                          "port":  443,
+                          "match":  "*.st.dl.eccdnx.com",
+                          "forward":  "store.cdn.queniuqe.com",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "store.cdn.queniuqe.com",
+                          "proxyType":  0,
+                          "listen":  "shared.st.dl.eccdnx.com;clan.st.dl.eccdnx.com;store.st.dl.eccdnx.com;avatars.st.dl.eccdnx.com;media.st.dl.eccdnx.com;video.st.dl.eccdnx.com",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "Twitch 直播",
+        "items":  [
+                      {
+                          "name":  "Twitch 直播聊天",
+                          "port":  443,
+                          "match":  "irc-ws.chat.twitch.tv;irc-ws-r.chat.twitch.tv",
+                          "forward":  "44.253.240.15",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "ttv",
+                          "proxyType":  0,
+                          "listen":  "irc-ws.chat.twitch.tv;irc-ws-r.chat.twitch.tv",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch 登录",
+                          "port":  443,
+                          "match":  "passport.twitch.tv",
+                          "forward":  "passttv.steam302.xyz",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "passttv.steam302.xyz",
+                          "proxyType":  1,
+                          "listen":  "passport.twitch.tv",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch Assets",
+                          "port":  443,
+                          "match":  "assets.twitch.tv",
+                          "forward":  "static.twitchcdn.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "static.twitchcdn.net",
+                          "proxyType":  1,
+                          "listen":  "assets.twitch.tv",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch Assets2",
+                          "port":  443,
+                          "match":  "clips-media-assets2.twitch.tv",
+                          "forward":  "d2xmjdvx03ij56.cloudfront.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "d2xmjdvx03ij56.cloudfront.net",
+                          "proxyType":  1,
+                          "listen":  "clips-media-assets2.twitch.tv",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch 直播掉宝",
+                          "port":  443,
+                          "match":  "*.pdx01.abs.hls.ttvnw.net",
+                          "forward":  "science-edge-external-prod-73889260.us-west-2.elb.amazonaws.com",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "abs.hls.ttvnw.net;video-edge-00252e.pdx01.abs.hls.ttvnw.net",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch 第三方关联登录 CDN",
+                          "port":  443,
+                          "match":  "id-cdn.twitch.tv",
+                          "forward":  "idcdnttv.steam302.xyz",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "idcdnttv.steam302.xyz",
+                          "proxyType":  1,
+                          "listen":  "id-cdn.twitch.tv",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch 第三方关联登录",
+                          "port":  443,
+                          "match":  "id.twitch.tv",
+                          "forward":  "2973c6ca0e111662ed293b57dbae9fbf.steam302.xyz",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "ttv",
+                          "proxyType":  0,
+                          "listen":  "id.twitch.tv",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch 掉宝服务",
+                          "port":  443,
+                          "match":  "pubsub-edge.twitch.tv",
+                          "forward":  "890c88446f94f25bd32a3f1e0df6c120.steam302.xyz",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "pubsub-edge.twitch.tv",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch 服务",
+                          "port":  443,
+                          "match":  "supervisor.ext-twitch.tv;vod-secure.twitch.tv;music.twitch.tv",
+                          "forward":  "d12b3e89c9703p.cloudfront.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "supervisor.ext-twitch.tv;vod-secure.twitch.tv;music.twitch.tv",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch Panels图片",
+                          "port":  443,
+                          "match":  "panels.twitch.tv",
+                          "forward":  "twitchimage.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "panels.twitch.tv",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Twitch 直播网页加载",
+                          "port":  443,
+                          "match":  "twitch.tv;*.twitch.tv",
+                          "forward":  "twitch.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "twitch.tv;www.twitch.tv;m.twitch.tv;app.twitch.tv;badges.twitch.tv;blog.twitch.tv;inspector.twitch.tv;stream.twitch.tv;dev.twitch.tv;clips.twitch.tv;gql.twitch.tv;vod-secure.twitch.tv;vod-storyboards.twitch.tv;trowel.twitch.tv;countess.twitch.tv;extension-files.twitch.tv;vod-metro.twitch.tv;pubster.twitch.tv;help.twitch.tv;passport.twitch.tv;link.twitch.tv;id-cdn.twitch.tv;player.twitch.tv;api.twitch.tv;cvp.twitch.tv;clips-media-assets2.twitch.tv;client-event-reporter.twitch.tv;gds-vhs-drops-campaign-images.twitch.tv;us-west-2.uploads-regional.twitch.tv;assets.help.twitch.tv;discuss.dev.twitch.tv;dashboard.twitch.tv",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "Origin",
+        "items":  [
+                      {
+                          "name":  "Origin 游戏下载",
+                          "port":  443,
+                          "match":  "origin-a.akamaihd.net",
+                          "forward":  "cctv4-lh.akamaihd.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "origin-a.akamaihd.net",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "Uplay",
+        "items":  [
+                      {
+                          "name":  "Uplay 商店",
+                          "port":  443,
+                          "match":  "store.ubisoft.com",
+                          "forward":  "commcloud.prod-abbs-ubi-com.cc-ecdn.net.cdn.cloudflare.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "@domain",
+                          "proxyType":  0,
+                          "listen":  "store.ubisoft.com",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "公共 CDN",
+        "items":  [
+                      {
+                          "name":  "fonts.gstatic.com",
+                          "port":  443,
+                          "match":  "fonts.gstatic.com",
+                          "forward":  "gstatic.loli.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "gstatic.loli.net",
+                          "proxyType":  1,
+                          "listen":  "fonts.gstatic.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Gravatar 头像",
+                          "port":  443,
+                          "match":  "gravatar.com",
+                          "forward":  "192.0.80.239",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "gravatar.com;secure.gravatar.com;www.gravatar.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "themes.googleusercontent.com",
+                          "port":  443,
+                          "match":  "themes.googleusercontent.com",
+                          "forward":  "themes.loli.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "themes.loli.net",
+                          "proxyType":  1,
+                          "listen":  "themes.googleusercontent.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "ajax.googleapis.com",
+                          "port":  443,
+                          "match":  "ajax.googleapis.com",
+                          "forward":  "ajax.proxy.ustclug.org",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "ajax.proxy.ustclug.org",
+                          "proxyType":  1,
+                          "listen":  "ajax.googleapis.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "fonts.googleapis.com",
+                          "port":  443,
+                          "match":  "fonts.googleapis.com",
+                          "forward":  "fonts.font.im",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "fonts.font.im",
+                          "proxyType":  1,
+                          "listen":  "fonts.googleapis.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "BootStrap CDN",
+                          "port":  443,
+                          "match":  "maxcdn.bootstrapcdn.com/bootstrap",
+                          "forward":  "cdn.bootcdn.net/ajax/libs/twitter-bootstrap",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "cdn.bootcdn.net",
+                          "proxyType":  1,
+                          "listen":  "maxcdn.bootstrapcdn.com",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "Spotify",
+        "items":  [
+                      {
+                          "name":  "Open Spotify",
+                          "port":  443,
+                          "match":  "open.spotify.com",
+                          "forward":  "https://nl.mossimo.top/",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "nl.mossimo.top",
+                          "proxyType":  4,
+                          "listen":  "open.spotify.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Spotify 官网",
+                          "port":  443,
+                          "match":  "spotify.com;www.spotify.com;apresolve.spotify.com;api-partner.spotify.com",
+                          "forward":  "https://nl.mossimo.top/",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "nl.mossimo.top",
+                          "proxyType":  4,
+                          "listen":  "spotify.com;www.spotify.com;apresolve.spotify.com;api-partner.spotify.com",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "Google 翻译",
+        "items":  [
+                      {
+                          "name":  "Google 翻译 CN",
+                          "port":  443,
+                          "match":  "translate.google.cn",
+                          "forward":  "https://nl.mossimo.top/",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "nl.mossimo.top",
+                          "proxyType":  4,
+                          "listen":  "translate.google.cn",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Google 翻译 API (修复浏览器翻译功能)",
+                          "port":  443,
+                          "match":  "translate.googleapis.com;translate-pa.googleapis.com",
+                          "forward":  "https://nl.mossimo.top/",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "nl.mossimo.top",
+                          "proxyType":  4,
+                          "listen":  "translate.googleapis.com;translate-pa.googleapis.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Google 翻译",
+                          "port":  443,
+                          "match":  "translate.google.com",
+                          "forward":  "https://nl.mossimo.top/",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "nl.mossimo.top",
+                          "proxyType":  4,
+                          "listen":  "translate.google.com",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "国外验证码平台",
+        "items":  [
+                      {
+                          "name":  "Google(Recaptcha) 验证码",
+                          "port":  443,
+                          "match":  "google.com/recaptcha;www.google.com/recaptcha",
+                          "forward":  "www.recaptcha.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "@domain",
+                          "proxyType":  1,
+                          "listen":  "google.com;www.google.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "hCaptcha 验证码",
+                          "port":  443,
+                          "match":  "hcaptcha.com",
+                          "forward":  "cf.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "@domain",
+                          "proxyType":  0,
+                          "listen":  "hcaptcha.com;assets.hcaptcha.com;imgs.hcaptcha.com;www.hcaptcha.com;docs.hcaptcha.com;js.hcaptcha.com;newassets.hcaptcha.com;imgs3.hcaptcha.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Arkoselabs",
+                          "port":  443,
+                          "match":  "arkoselabs.com",
+                          "forward":  "roblox-api.arkoselabs.com.cdn.cloudflare.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "client-api.arkoselabs.com;epic-games-api.arkoselabs.com;cdn.arkoselabs.com;prod-ireland.arkoselabs.com",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "Github",
+        "items":  [
+                      {
+                          "name":  "huggingface.co",
+                          "port":  443,
+                          "match":  "huggingface.co",
+                          "forward":  "https://nl.mossimo.top/",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "nl.mossimo.top",
+                          "proxyType":  4,
+                          "listen":  "huggingface.co",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github Dev",
+                          "port":  443,
+                          "match":  "github.dev",
+                          "forward":  "20.43.185.14",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "github.dev",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github Api",
+                          "port":  443,
+                          "match":  "api.github.com",
+                          "forward":  "githubapi.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "api.github.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github Assets",
+                          "port":  443,
+                          "match":  "github.githubassets.com;support-assets.githubassets.com;",
+                          "forward":  "githubdocs.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "github.githubassets.com;support-assets.githubassets.com;",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github Education",
+                          "port":  443,
+                          "match":  "education.github.com",
+                          "forward":  "educationgithub.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "education.github.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github Resources",
+                          "port":  443,
+                          "match":  "resources.github.com",
+                          "forward":  "resources.github.com",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "resources.github.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github Uploads",
+                          "port":  443,
+                          "match":  "uploads.github.com",
+                          "forward":  "uploads.github.com",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "uploads.github.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github Archiveprogram",
+                          "port":  443,
+                          "match":  "archiveprogram.github.com",
+                          "forward":  "archiveprogram.github.com",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "archiveprogram.github.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github UserContent",
+                          "port":  443,
+                          "match":  "githubusercontent.com;raw.github.com",
+                          "forward":  "23.235.37.133",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "Github",
+                          "proxyType":  0,
+                          "listen":  "raw.github.com;githubusercontent.com;raw.githubusercontent.com;camo.githubusercontent.com;cloud.githubusercontent.com;avatars.githubusercontent.com;avatars0.githubusercontent.com;avatars1.githubusercontent.com;avatars2.githubusercontent.com;avatars3.githubusercontent.com;user-images.githubusercontent.com;objects.githubusercontent.com;private-user-images.githubusercontent.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github 网站 (Git Push)",
+                          "port":  443,
+                          "match":  "github.com;pages.github.com;gist.github.com",
+                          "forward":  "20.207.73.82",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "github.com;pages.github.com;gist.github.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github App",
+                          "port":  443,
+                          "match":  "githubapp.com",
+                          "forward":  "140.82.112.29",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "githubapp.com;",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Docker Hub",
+                          "port":  443,
+                          "match":  "hub.docker.com",
+                          "forward":  "54.208.73.48",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "hub.docker.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "greasyfork",
+                          "port":  443,
+                          "match":  "greasyfork.org;update.greasyfork.org",
+                          "forward":  "http://pt.mossimo.net:41080/",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "pt.mossimo.net",
+                          "proxyType":  4,
+                          "listen":  "greasyfork.org;update.greasyfork.org",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Github.io",
+                          "port":  443,
+                          "match":  "github.io;*.github.io",
+                          "forward":  "185.199.110.153",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "github.io;www.github.io",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "Roblox",
+        "items":  [
+                      {
+                          "name":  "Roblox",
+                          "port":  443,
+                          "match":  "www.roblox.com;roblox.com;web.roblox.com;apis.roblox.com;games.roblox.com;auth.roblox.com;accountsettings.roblox.com;presence.roblox.com;friends.roblox.com;users.roblox.com;gameinternationalization.roblox.com;gamejoin.roblox.com;locale.roblox.com;metrics.roblox.com;economy.roblox.com;groups.roblox.com;develop.roblox.com;versioncompatibility.api.roblox.com;clientsettings.api.roblox.com;ephemeralcounters.api.roblox.com;nl.roblox.com;badges.roblox.com;chat.roblox.com;ecsv2.roblox.com;thumbnails.roblox.com;twostepverification.roblox.com;trades.roblox.com;notifications.roblox.com;realtime-signalr.roblox.com;assetgame.roblox.com;contacts.roblox.com;t.email.roblox.com",
+                          "forward":  "https://nl.mossimo.top/",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "nl.mossimo.top",
+                          "proxyType":  4,
+                          "listen":  "www.roblox.com;roblox.com;web.roblox.com;apis.roblox.com;games.roblox.com;auth.roblox.com;accountsettings.roblox.com;presence.roblox.com;friends.roblox.com;users.roblox.com;gameinternationalization.roblox.com;gamejoin.roblox.com;locale.roblox.com;metrics.roblox.com;economy.roblox.com;groups.roblox.com;develop.roblox.com;versioncompatibility.api.roblox.com;clientsettings.api.roblox.com;ephemeralcounters.api.roblox.com;nl.roblox.com;badges.roblox.com;chat.roblox.com;ecsv2.roblox.com;thumbnails.roblox.com;twostepverification.roblox.com;trades.roblox.com;notifications.roblox.com;realtime-signalr.roblox.com;assetgame.roblox.com;contacts.roblox.com;t.email.roblox.com",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "Nexus Mods",
+        "items":  [
+                      {
+                          "name":  "Fandom",
+                          "port":  443,
+                          "match":  "fandom.com;*.fandom.com",
+                          "forward":  "wikia.com",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "fandom.com;www.fandom.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Nexusmods 网站",
+                          "port":  443,
+                          "match":  "nexusmods.com;*.nexusmods.com",
+                          "forward":  "cf.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "@domain",
+                          "proxyType":  0,
+                          "listen":  "nexusmods.com;www.nexusmods.com;staticdelivery.nexusmods.com;cf-files.nexusmods.com;staticstats.nexusmods.com;users.nexusmods.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Nexusmods 大文件下载",
+                          "port":  443,
+                          "match":  "files.nexus-cdn.com;premium-files.nexus-cdn.com;supporter-files.nexus-cdn.com",
+                          "forward":  "89.187.185.168",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "@domain",
+                          "proxyType":  0,
+                          "listen":  "files.nexus-cdn.com;premium-files.nexus-cdn.com;supporter-files.nexus-cdn.com",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "Mod.io",
+        "items":  [
+                      {
+                          "name":  "CDN",
+                          "port":  443,
+                          "match":  "binary.lge.modcdn.io",
+                          "forward":  "binary.modcdn.io",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  1,
+                          "listen":  "binary.lge.modcdn.io",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "官网",
+                          "port":  443,
+                          "match":  "mod.io;*.mod.io;*.old.mod.io",
+                          "forward":  "https://nl.mossimo.top/",
+                          "ignoreSsl":  false,
+                          "fakeServerName":  "nl.mossimo.top",
+                          "proxyType":  4,
+                          "listen":  "mod.io;static.mod.io;api.mod.io;docs.mod.io;beta.mod.io;blog.mod.io;auth.mod.io",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "网盘服务",
+        "items":  [
+                      {
+                          "name":  "OneDrive 服务",
+                          "port":  443,
+                          "match":  "storage.live.com;skyapi.onedrive.live.com",
+                          "forward":  "apis.live.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "skyapi.onedrive.live.com",
+                          "proxyType":  0,
+                          "listen":  "storage.live.com;skyapi.onedrive.live.com;",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "OneDrive",
+                          "port":  443,
+                          "match":  "onedrive.live.com;onedrive.live",
+                          "forward":  "13.107.42.13",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "onedrive.live.com;onedrive.live;",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "MEGA 服务",
+                          "port":  443,
+                          "match":  "mega.co.nz;*.mega.co.nz",
+                          "forward":  "66.203.125.10",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "mega.co.nz;g.cdn1.mega.co.nz;www.mega.co.nz;userstroage.mega.co.nz;g.api.mega.co.nz",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "MEGA",
+                          "port":  443,
+                          "match":  "mega.io;g.static.mega.co.nz;*.mega.io",
+                          "forward":  "66.203.124.37",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "mega.io;g.static.mega.co.nz",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "MEGA",
+                          "port":  443,
+                          "match":  "mega.nz;*.mega.nz",
+                          "forward":  "31.216.145.5",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "mega.nz;www.mega.nz",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "DropBox 服务",
+                          "port":  443,
+                          "match":  "aem.dropbox.com",
+                          "forward":  "18.65.229.23",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "aem.dropbox.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "DropBox",
+                          "port":  443,
+                          "match":  "dropbox.com;www.dropbox.com",
+                          "forward":  "162.125.248.18",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "dropbox.com;www.dropbox.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "DropBox 下载服务(仅系统代理模式)",
+                          "port":  443,
+                          "match":  "dl.dropboxusercontent.com;*.dl.dropboxusercontent.com",
+                          "forward":  "162.125.81.15",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "dl.dropboxusercontent.com;uc07aaf207f16a978a3dbc24a1c9.dl.dropboxusercontent.com;uc87442e427766fe8cf2a7a07827.dl.dropboxusercontent.com;uc957f785cc03b9b273234fd24f9.dl.dropboxusercontent.com;ucc541451e9df780e40777d477eb.dl.dropboxusercontent.com;ucb277f9a438d6b3f4ea2147ac26.dl.dropboxusercontent.com;uc4b4b602d4b01e27782f92ce984.dl.dropboxusercontent.com;uc9c83355d6aa8bc75f7f597c7d6.dl.dropboxusercontent.com;ucaf37cba09486e69c215bdfe2e2.dl.dropboxusercontent.com;uca3a40eb53259715309022eb9fd.dl.dropboxusercontent.com",
+                          "checked":  false
+                      }
+                  ]
+    },
+    {
+        "name":  "其它网站",
+        "items":  [
+                      {
+                          "name":  "Pinterest",
+                          "port":  443,
+                          "match":  "pinterest.com;pinimg.com;pinterest.info;*.pinterest.com;*.pinimg.com;*.pinterest.info;*.pinterest.jp;*.pinterest.kr",
+                          "forward":  "pinterest.map.fastly.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "pinterest.com;www.pinterest.com;pinimg.com;sm.pinimg.com;s.pinimg.com;i.pinimg.com;de.pinterest.com;s2.pinimg.com;pinterest.jp;pinterest.kr;pinterest.info",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Artstation",
+                          "port":  443,
+                          "match":  "artstation.com;*.artstation.com",
+                          "forward":  "artstation.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "artstation.com;www.artstation.com;cdn-learning.artstation.com;cdna.artstation.com;cdn.artstation.com;cdnb.artstation.com;aleksi.artstation.com;aroll.artstation.com;dya.artstation.com;yourihoek.artstation.com;rishablue.artstation.com;ww.artstation.com;magazine.artstation.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "Imgur 图床",
+                          "port":  443,
+                          "match":  "imgur.com;*.imgur.com",
+                          "forward":  "imgur.rmbgame.net",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "imgur.com;i.imgur.com;s.imgur.com;i.stack.imgur.com;m.imgur.com;api.imgur.com;p.imgur.com;www.imgur.com;fufufu23.imgur.com;thepoy.imgur.com;blog.imgur.com;cellcow.imgur.com;t.imgur.com",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "vercel.app",
+                          "port":  443,
+                          "match":  "vercel.app;*.vercel.app",
+                          "forward":  "76.76.21.164",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "vercel.app",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "in.appcenter.ms",
+                          "port":  443,
+                          "match":  "in.appcenter.ms",
+                          "forward":  "in.mobile.azure.com",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "in.appcenter.ms",
+                          "checked":  false
+                      },
+                      {
+                          "name":  "appcenter.ms",
+                          "port":  443,
+                          "match":  "appcenter.ms;*.appcenter.ms",
+                          "forward":  "40.79.21.140",
+                          "ignoreSsl":  true,
+                          "fakeServerName":  "",
+                          "proxyType":  0,
+                          "listen":  "appcenter.ms",
+                          "checked":  false
+                      }
+                  ]
+    }
+]

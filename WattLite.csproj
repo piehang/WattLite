@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>WattLite</AssemblyName>
+    <RootNamespace>WattLite</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <SatelliteResourceLanguages>zh-Hans</SatelliteResourceLanguages>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS0618;CS8632</NoWarn>
+
+    <!-- 版本资源：子进程通过 AssemblyInfo.ValidateAssembly 校验这 5 个字符串，必须逐字一致 -->
+    <AssemblyTitle>Watt Toolkit</AssemblyTitle>
+    <Product>Watt Toolkit</Product>
+    <Company>江苏蒸汽凡星科技有限公司</Company>
+    <Copyright>©️ 江苏蒸汽凡星科技有限公司. All rights reserved.</Copyright>
+    <Description>「Watt Toolkit」是一个开源跨平台的多功能游戏工具箱。</Description>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- 官方 DLL 所在目录（仅编译期需要，运行期使用输出目录下的 libs） -->
+    <WttsLibs Condition="'$(WttsLibs)' == ''">$(LOCALAPPDATA)\Temp\wtts\libs</WttsLibs>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BD.Common">
+      <HintPath>$(WttsLibs)\BD.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BD.WTTS.Primitives.ViewModels">
+      <HintPath>$(WttsLibs)\BD.WTTS.Primitives.ViewModels.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BD.WTTS.Primitives">
+      <HintPath>$(WttsLibs)\BD.WTTS.Primitives.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BD.WTTS.Client.Plugins.Accelerator">
+      <HintPath>$(WttsLibs)\BD.WTTS.Client.Plugins.Accelerator.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BD.WTTS.Client.IPC">
+      <HintPath>$(WttsLibs)\BD.WTTS.Client.IPC.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="dotnetCampus.Ipc">
+      <HintPath>$(WttsLibs)\dotnetCampus.Ipc.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MemoryPack.Core">
+      <HintPath>$(WttsLibs)\MemoryPack.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="domains.json" LogicalName="WattLite.domains.json" />
+    <None Include="Accelerator\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <!-- .NET 10 运行时（host/fxr + NETCore.App + AspNetCore.App），加速器子进程为框架依赖应用 -->
+    <None Include="dotnet\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+  <!-- 运行期依赖：仅保留实测会被加载的官方 DLL（已通过完整启停 + 真实访问验证），由 AssemblyResolve 按需加载 -->
+  <ItemGroup>
+    <LibsKeep Include="BD.AppCenter;BD.Common;BD.Common.BirthDate;BD.Common.Essentials.Primitives;BD.Common.Mvvm;BD.Common.PhoneNumber;BD.Common.Primitives;BD.Common.Repositories;BD.Common.Repositories.SQLitePCL;BD.Common.Security;BD.Common.Toast;BD.SteamClient;BD.WTTS.Client;BD.WTTS.Client.Plugins.Accelerator;BD.WTTS.MicroServices.ClientSDK;BD.WTTS.MicroServices.Primitives;BD.WTTS.MicroServices.Primitives.ViewModels;BD.WTTS.Primitives;BD.WTTS.Primitives.ViewModels;dotnetCampus.Ipc;DynamicData;Fusillade;MemoryPack.Core;MessagePack;Microsoft.Extensions.Logging.Abstractions;Microsoft.Extensions.Options;Microsoft.Windows.SDK.NET;Newtonsoft.Json;ReactiveUI;ReactiveUI.Tests;Splat;Splat.Builder;Splat.Core;Splat.Logging;SQLite-net;System.Reactive;WinRT.Runtime;libonigwrap;steam_api64" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="@(LibsKeep->'$(WttsLibs)\%(Identity).dll')" Link="libs\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+</Project>

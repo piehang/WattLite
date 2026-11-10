@@ -1,0 +1,14 @@
+# 构建产物
+bin/
+obj/
+publish/
+
+# 运行期资产：来自官方 Watt Toolkit 安装目录，体积大且受其许可约束，不入库
+Accelerator/
+dotnet/
+
+# 安装包输出
+installer/*.exe
+
+# 日志
+*.log
