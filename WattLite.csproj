@@ -29,8 +29,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <!-- 官方 DLL 所在目录（仅编译期需要，运行期使用输出目录下的 libs） -->
-    <WttsLibs Condition="'$(WttsLibs)' == ''">$(LOCALAPPDATA)\Temp\wtts\libs</WttsLibs>
+    <!-- 官方 DLL 目录（已随仓库提交在 libs/，外部构建时可用 -p:WttsLibs 覆盖） -->
+    <WttsLibs Condition="'$(WttsLibs)' == ''">$(MSBuildThisFileDirectory)libs</WttsLibs>
   </PropertyGroup>
 
   <ItemGroup>
@@ -48,10 +48,6 @@
     </Reference>
     <Reference Include="BD.WTTS.Client.Plugins.Accelerator">
       <HintPath>$(WttsLibs)\BD.WTTS.Client.Plugins.Accelerator.dll</HintPath>
-      <Private>false</Private>
-    </Reference>
-    <Reference Include="BD.WTTS.Client.IPC">
-      <HintPath>$(WttsLibs)\BD.WTTS.Client.IPC.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="dotnetCampus.Ipc">

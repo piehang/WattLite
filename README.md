@@ -27,6 +27,7 @@
 | --- | --- |
 | `*.cs` | 主程序源码 |
 | `domains.json` | 内置加速规则（由官方 `LOCAL_ACCELERATE.json` 解码后精简） |
+| `libs/` | 编译/运行所需的官方 DLL（白名单裁剪） |
 | `installer/WattLite.nsi` | NSIS 安装包脚本 |
 | `Accelerator/`、`dotnet/` | 构建所需，来自官方安装目录，未纳入版本库 |
 
@@ -34,12 +35,13 @@
 
 1. 安装 Watt Toolkit（Microsoft Store 版），版本 `3.1.2025.0`
 2. 把官方安装目录下的 `Accelerator/` 与 `dotnet/` 复制到本目录
-3. 准备官方 DLL 目录（`BD.Common.dll`、`BD.WTTS.*.dll`、`dotnetCampus.Ipc.dll` 等），编译时通过 `-p:WttsLibs=<路径>` 指定
+
+编译所需的官方 DLL（39 个，已裁剪）已提交在 `libs/` 目录，无需另行准备。
 
 ## 构建
 
 ```powershell
-dotnet publish WattLite.csproj -c Release -r win-x64 -o publish -p:WttsLibs=<官方DLL目录>
+dotnet publish WattLite.csproj -c Release -r win-x64 -o publish
 makensis installer\WattLite.nsi
 ```
 
