@@ -3,6 +3,10 @@ bin/
 obj/
 publish/
 
+# 运行期资产：来自官方安装目录，不入库
+Accelerator/
+dotnet/
+
 # 安装包输出
 installer/*.exe
 

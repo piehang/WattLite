@@ -28,13 +28,15 @@
 | `*.cs` | 主程序源码 |
 | `domains.json` | 内置加速规则（由官方 `LOCAL_ACCELERATE.json` 解码后精简） |
 | `libs/` | 编译/运行所需的官方 DLL（白名单裁剪） |
-| `Accelerator/` | 官方加速器子进程（反向代理核心） |
-| `dotnet/` | 便携版 .NET 10 运行时（NETCore.App + AspNetCore.App） |
 | `installer/WattLite.nsi` | NSIS 安装包脚本 |
+| `Accelerator/`、`dotnet/` | 构建所需，来自官方安装目录，未纳入版本库 |
 
 ## 构建前提
 
-仓库已自包含：克隆后只需安装 .NET 10 SDK，直接构建即可，无需再安装 Watt Toolkit 或复制任何官方文件。
+1. 安装 Watt Toolkit（Microsoft Store 版），版本 `3.1.2025.0`
+2. 把官方安装目录下的 `Accelerator/` 与 `dotnet/` 复制到本目录
+
+编译所需的官方 DLL（39 个，已裁剪）已提交在 `libs/` 目录，无需另行准备。
 
 ## 构建
 
